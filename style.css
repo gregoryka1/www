@@ -2,7 +2,7 @@
 @property --background-color{
     syntax: '<color>';
     inherits: false;
-    initial-value: #363636;
+    initial-value: black;
 }
 
 @property --foreground-color{
@@ -49,7 +49,7 @@
 @property --section-2-background{
     syntax: '<color>';
     inherits: false;
-    initial-value: rgb(70, 70, 70);
+    initial-value: black;
 }
 @property --section-1-foreground{
     syntax: '<color>';
@@ -163,15 +163,27 @@ section .btn{
     width: fit-content;
 }
 section[margtop]>div{
-    margin-top: 200px;
+    margin-top: 350px;
 }
 section[margleft]>div{
     margin-left: 150px;
     margin-left: calc((100% - 300px)/3);
 }
+@media screen and (min-width: 1025px) {
+    section[margtop]>div{
+        margin-top: 200px;
+    }
+    section[margleft]>div{
+        margin-left: 150px;
+        margin-left: calc((100% - 100px)/1.5);
+    }
+}
 @media screen and (max-width: 361px){
     section[margleft]>div{
         margin-left: 0;
+    }
+    section[margtop]>div{
+        margin-top: 200px;
     }
 }
 section[num1]{
