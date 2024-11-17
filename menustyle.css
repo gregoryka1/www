@@ -1,0 +1,19 @@
+#menubar a{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: x-large;
+    color: white;
+    text-decoration: none;
+}
+#menubar li{
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: x-large;
+    color: white
+}
+#menubar a:hover{
+    color: gray;
+}
+#menubar{
+    height: 130dvh;
+}

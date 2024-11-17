@@ -1,0 +1,353 @@
+*{padding:0;margin:0;font-family: Helvetica, Arial, sans-serif;}
+@property --background-color{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #363636;
+}
+
+@property --foreground-color{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: white
+    ;
+}
+@property --nav-foreground-color{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #d1d1d1;
+}
+@property --nav-background-color{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: #202020;
+}
+@property --nav-bot-background-color{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: black;
+}
+@property --nav-height{
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 50px;
+}
+@property --nav-btn-height{
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 24px; /*24 MAX: IF NOT CHANGE "(HERE--nav-btn-height)"*/
+}
+@property --nav-bot-height{
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 64px;
+}
+@property --section-1-background{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: transparent;
+}
+@property --section-2-background{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: rgb(70, 70, 70);
+}
+@property --section-1-foreground{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: white;
+}
+@property --section-2-foreground{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: white;
+}
+@property --menu-label-length{
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 100px;
+}
+@property --section-3-background{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: rgb(88, 88, 88);
+}
+@property --section-3-foreground{
+    syntax: '<color>';
+    inherits: false;
+    initial-value: white;
+}
+
+body{
+    min-width: 307px;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+    padding-top: var(--nav-height);
+    padding-bottom: var(--nav-bot-height);
+}
+html{
+    
+    scroll-behavior: smooth !important;
+}
+.top-bar,.bot-bar{
+    background-color: var(--nav-background-color);
+    color: var(--nav-foreground-color);
+    position: fixed;
+    width: 100%;
+}
+.top-bar{
+    top: 0;
+    height: var(--nav-height);
+    box-shadow: black 0 5px 80px;
+}
+.namedisplay{
+    display: inline-block;
+    width: 311px;
+    text-align: center;
+    margin-left: calc(((100% - 311px - (var(--menu-label-length) * 2))/2) - 10px);
+}
+.menulabel{
+    margin-left: 10px;
+    display: inline-block;
+    width: var(--menu-label-length);
+}
+.menulabel>div{
+    display: flex;
+}
+.menulabel img{
+    margin: 5px;
+}
+.menulabel span{
+    padding-top: calc((50px - 17px)/2)
+}
+.bot-bar{
+    bottom: 0;
+    text-align: center;
+    background-color: var(--nav-bot-background-color);
+}
+.bot-bar a{
+    text-decoration: none;
+    color: var(--nav-foreground-color)
+}
+.bot-bar ul{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    text-align: center;
+    /* margin: 0 calc((100% - 220px)/2); */
+}
+.bot-bar li{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 10px 20px;
+    font-size: 11px;
+    width: 70px;
+    overflow: hidden;
+}
+.bot-bar img{
+    margin: 0 calc((70px - 40px)/2);
+}
+section{
+    padding: 20px 30px;
+    min-height: 700px;
+    height: fit-content;
+}
+section h2{
+    font-size: 50px;
+}
+section .btn{
+    background-color: rgb(255, 187, 0);
+    text-decoration: none;
+    padding: 20px 10px;
+    display: block;
+    width: fit-content;
+}
+section[margtop]>div{
+    margin-top: 200px;
+}
+section[margleft]>div{
+    margin-left: 150px;
+    margin-left: calc((100% - 300px)/3);
+}
+@media screen and (max-width: 361px){
+    section[margleft]>div{
+        margin-left: 0;
+    }
+}
+section[num1]{
+    background-color: var(--section-1-background);
+    color: var(--section-1-foreground);
+}
+section[backimg1]{
+    background-image: url("img/1622525579429.jpeg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+@media screen and (max-width: 851px) {
+    section[backimg1]{
+        background-size: 150%;
+        background-position: 20% 0;
+    }
+}
+@media screen and (max-width: 500px){
+    section[backimg1]{
+        background-size: 200%;
+        background-position: 40% 0;
+    }
+}
+section[backimg2]{
+    background-image: url("./img_temp.png");
+}
+section[num2]{
+    background-color: var(--section-2-background);
+    color: var(--section-2-foreground);
+}
+section[num3]{
+    background-color: var(--section-4-background);
+    color: var(--section-3-foreground);
+}
+section[flex]>div{
+    display: flex;
+    flex-direction: row-reverse;
+    background-color: var(--section-2-background);
+}
+section[about],section[about]>div {
+    font-size: xx-large;
+    padding: 0;
+    margin: 0;
+}
+section[flex] .img{
+    width: 3600px;
+    height: 800px;
+    overflow: hidden;
+}
+.img[pic1]{
+    background-image: url("2024-11-10\ at\ 21.50.06_1bde8735_cut.jpg");
+    background-size: auto 900px;
+    background-position: -200px 0;
+    background-repeat: no-repeat;
+    float: right;
+}
+@media screen and (min-width: 1200px)
+{
+    section[about]>div{
+        margin: 20px 70px;
+    }
+    .img[pic1]{
+        background-position: 0 0;
+    }
+}
+@media screen and (max-width: 831px)
+{
+    section[flex]>div{
+        flex-direction: column;
+    }
+    section[flex] img{
+        margin: 50px;
+        height: calc(100% - 100px);
+        width: calc(100% - 100px);
+    }
+    section[flex] .img{
+        background-image: none;
+        height: auto;
+        width: calc(100%);
+        padding: 0;
+    }
+
+    section[flex] .img > img{
+        display: block;
+    }
+}
+section[about]>div>div{
+    padding: 50px;
+}
+
+
+.mediabar{
+    display: block;
+    width: min-content;
+    position: fixed;
+    right: 0;
+    top: 150px;
+    background-color: rgba(0,0,0,0.2);
+    border-top-left-radius: 11px;
+    border-top-right-radius: 11px;
+    height: 84px;
+    border-bottom-left-radius: 2px;
+    border-bottom-right-radius: 2px;
+}
+.mediabar *{padding: 0;margin: 0; display: inline-block}
+/* @media screen and (max-width: 1024px){
+    .mediabar{display:none}
+} */
+@media screen and (max-width: 535px) {
+    .namedisplay{
+        font-size: x-small;
+    }
+    .menulabel span {
+        height: 0;
+        overflow: hidden;
+    }
+}
+#menu{
+    display: none;
+}
+#fade{
+    width: 100%;
+    height: 130dvh;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    transition-duration: 400ms;
+    pointer-events: none;
+}
+#menu:checked ~ #fade{
+    background-color: rgba(0, 0, 0, 0.7);
+    pointer-events: auto;
+}
+.menulabel{
+    cursor: pointer;
+}
+#menubar{
+    width: 300px;
+    height: 100dvh;
+    position: fixed;
+    left: -400px;
+    background-color: var(--nav-background-color);
+    z-index: 3;
+    transition-duration: 400ms;
+    top: 0;
+}
+#menu:checked ~#menubar{
+    left: 0;
+}
+.img > img{
+    display: none;
+}
+section[kontakt]{
+    display: flex;
+    padding: 0;
+}
+section[kontakt]>div{
+    flex:1;
+}
+iframe{
+    width: calc(100% - 2px);
+    height: 800px;
+}
+@media screen and (max-width: 835px){
+    section[kontakt]{
+        flex-direction: column-reverse;
+    }
+    iframe{
+        width: calc(100% - 2px);
+        height: 500px;
+    }
+}
+section[kontakt]>div:first-of-type{
+    font-size: x-large;
+    padding: 20px;
+}
+section[kontakt] p{
+    margin: 20px;
+}
